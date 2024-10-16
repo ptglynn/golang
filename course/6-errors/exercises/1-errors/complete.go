@@ -12,7 +12,7 @@ func sendSMSToCouple(msgToCustomer, msgToSpouse string) (float64, error) {
 
 	costSpouse, err := sendSMS(msgToSpouse)
 	if err != nil {
-		return 0, err
+		return 0.0, err
 	}
 	return costSpouse + cost, nil
 }
