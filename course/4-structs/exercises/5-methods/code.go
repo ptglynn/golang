@@ -7,7 +7,9 @@ type authenticationInfo struct {
 	password string
 }
 
-// ?
+func (p authenticationInfo) getBasicAuth() string {
+	return "Authorization: Basic " + p.username + ":" + p.password
+}
 
 // don't touch below this line
 

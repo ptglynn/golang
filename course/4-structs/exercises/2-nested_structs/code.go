@@ -16,7 +16,12 @@ type user struct {
 }
 
 func canSendMessage(mToSend messageToSend) bool {
-	// ?
+	if mToSend.sender.name == "" || mToSend.sender.number == 0 {
+		return false
+	}
+	if mToSend.recipient.name == "" || mToSend.recipient.number == 0 {
+		return false
+	}
 	return true
 }
 
@@ -54,11 +59,11 @@ func main() {
 	test(messageToSend{
 		message: "you have an event tommorow",
 		sender: user{
-			number: 16545550987,
+			number: 0,
 		},
 		recipient: user{
 			name:   "Suzie Sall",
-			number: 0,
+			number: 16545550987,
 		},
 	})
 	test(messageToSend{
@@ -76,11 +81,11 @@ func main() {
 		message: "you have a birthday tommorow",
 		sender: user{
 			name:   "Eli Halafax",
-			number: 0,
+			number: 19035558973,
 		},
 		recipient: user{
 			name:   "Whitaker Sue",
-			number: 19035558973,
+			number: 0,
 		},
 	})
 }
