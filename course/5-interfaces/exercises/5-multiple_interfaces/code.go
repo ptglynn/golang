@@ -5,11 +5,11 @@ import (
 )
 
 func (e email) cost() float64 {
-	// ?
+	return e.expense()
 }
 
 func (e email) print() {
-	// ?
+	return e.printer()
 }
 
 // don't touch below this line
