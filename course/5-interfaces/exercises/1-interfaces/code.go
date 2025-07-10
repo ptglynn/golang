@@ -5,12 +5,12 @@ import (
 	"time"
 )
 
-func sendMessage(msg message) {
-	fmt.Println(msg.getMessage())
-}
-
 type message interface {
 	getMessage() string
+}
+
+func sendMessage(msg message) {
+	fmt.Println(msg.getMessage())
 }
 
 // don't edit below this line
